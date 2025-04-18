@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+body {
+    background-image: url('parchment.jpg'); /* یه تصویر بافت توماری نیاز داریم */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    color: #2c2c2c; /* خاکستری تیره برای خوانایی */
+}
+
+header {
+    background: linear-gradient(135deg, #0a1f44, #123063, #1d3e80, #2e4c99); /* سرمه‌ای‌های مختلف */
+    background-size: 300% 300%;
+    animation: headerGradient 10s ease infinite;
+    color: #fdf6e3;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border-bottom: 5px solid #d4af37; /* طلایی */
+}
+
+@keyframes headerGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+header img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-top: 1rem;
+    border: 4px solid #d4af37;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.03);
+}
+
+section {
+    background-color: rgba(255, 248, 230, 0.92); /* کرم روشن */
+    border: 5px solid #d4af37; /* طلایی */
+    border-radius: 25px;
+    box-shadow:
+        inset 0 0 15px rgba(0, 0, 0, 0.15),
+        0 0 20px rgba(212, 175, 55, 0.4);
+    padding: 2rem;
+    width: 80%;
+    margin: 2rem auto;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+section h2 {
+    color: #0a1f44; /* سرمه‌ای تیره */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-right: 4px solid #d4af37;
+    padding-right: 10px;
+}
+
+section:hover {
+    transform: scale(1.01);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: "✔";
+    color: #0a1f44;
+    margin-left: 8px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 2px solid #d4af37;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #0a1f44;
+}
+
+button {
+    background: #0a1f44;
+    color: #fff;
+    padding: 0.7rem 1.3rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(10, 31, 68, 0.3);
+}
+
+button:hover {
+    background: #06142e;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #1b1b1b;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.95rem;
+    border-top: 4px solid #fff2bf;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+    will-change: transform, opacity;
+}
+
+.scroll-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header img {
+        width: 90px;
+        height: 90px;
+    }
+
+    section {
+        width: 90%;
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+#contact {
+    max-height: 35vh;
+    overflow: auto;
+    padding: 1.5rem;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+form label {
+    font-size: 0.9rem;
+}
+
+form input,
+form textarea {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+}
